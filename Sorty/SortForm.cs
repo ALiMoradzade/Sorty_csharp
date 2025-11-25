@@ -150,9 +150,9 @@ namespace Sorty
             labelIsArraySorted.ForeColor = Color.Red;
         }
 
-        private void SortInit(List<Task> sorts, List<SortStat> sortStats)
+        private void SortInit(List<Func<Task>> sorts, List<SortStat> sortStats)
         {
-            sorts.Add(Task.Run(() =>
+            sorts.Add(() => Task.Run(() =>
             {
                 Sort sort = new Sort(array);
 
@@ -164,7 +164,7 @@ namespace Sorty
                 sortStats.Add(stat);
             }));
 
-            sorts.Add(Task.Run(() =>
+            sorts.Add(() => Task.Run(() =>
             {
                 Sort sort = new Sort(array);
 
@@ -176,7 +176,7 @@ namespace Sorty
                 sortStats.Add(stat);
             }));
 
-            sorts.Add(Task.Run(() =>
+            sorts.Add(() => Task.Run(() =>
             {
                 Sort sort = new Sort(array);
 
@@ -188,7 +188,7 @@ namespace Sorty
                 sortStats.Add(stat);
             }));
 
-            sorts.Add(Task.Run(() =>
+            sorts.Add(() => Task.Run(() =>
             {
                 Sort sort = new Sort(array);
 
@@ -200,7 +200,7 @@ namespace Sorty
                 sortStats.Add(stat);
             }));
 
-            sorts.Add(Task.Run(() =>
+            sorts.Add(() => Task.Run(() =>
             {
                 Sort sort = new Sort(array);
 
@@ -212,7 +212,7 @@ namespace Sorty
                 sortStats.Add(stat);
             }));
 
-            sorts.Add(Task.Run(() =>
+            sorts.Add(() => Task.Run(() =>
             {
                 Sort sort = new Sort(array);
 
@@ -224,7 +224,7 @@ namespace Sorty
                 sortStats.Add(stat);
             }));
 
-            sorts.Add(Task.Run(() =>
+            sorts.Add(() => Task.Run(() =>
             {
                 Sort sort = new Sort(array);
 
@@ -236,7 +236,7 @@ namespace Sorty
                 sortStats.Add(stat);
             }));
 
-            sorts.Add(Task.Run(() =>
+            sorts.Add(() => Task.Run(() =>
             {
                 Sort sort = new Sort(array);
 
@@ -248,7 +248,7 @@ namespace Sorty
                 sortStats.Add(stat);
             }));
 
-            sorts.Add(Task.Run(() =>
+            sorts.Add(() => Task.Run(() =>
             {
                 Sort sort = new Sort(array);
 
@@ -260,7 +260,7 @@ namespace Sorty
                 sortStats.Add(stat);
             }));
 
-            sorts.Add(Task.Run(() =>
+            sorts.Add(() => Task.Run(() =>
             {
                 Sort sort = new Sort(array);
 
@@ -272,7 +272,7 @@ namespace Sorty
                 sortStats.Add(stat);
             }));
 
-            sorts.Add(Task.Run(() =>
+            sorts.Add(() => Task.Run(() =>
             {
                 Sort sort = new Sort(array);
 
@@ -284,7 +284,7 @@ namespace Sorty
                 sortStats.Add(stat);
             }));
 
-            sorts.Add(Task.Run(() =>
+            sorts.Add(() => Task.Run(() =>
             {
                 Sort sort = new Sort(array);
 
@@ -296,7 +296,7 @@ namespace Sorty
                 sortStats.Add(stat);
             }));
 
-            sorts.Add(Task.Run(() =>
+            sorts.Add(() => Task.Run(() =>
             {
                 Sort sort = new Sort(array);
 
@@ -311,7 +311,7 @@ namespace Sorty
 
         private void buttonSort_Click(object sender, EventArgs e)
         {
-            List<Task> sorts = new List<Task>();
+            List<Func<Task>> sorts = new List<Func<Task>>();
             List<SortStat> sortStats = new List<SortStat>();
             
             SortInit(sorts, sortStats);

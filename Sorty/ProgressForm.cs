@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -10,8 +11,8 @@ namespace Sorty
     {
         private string formText = "Processing";
         private int n = 1;
-        private List<Task> tasks;
-        public ProgressForm(List<Task> tasks)
+        private List<Func<Task>> tasks;
+        public ProgressForm(List<Func<Task>> tasks)
         {
             InitializeComponent();
             this.tasks = tasks;
@@ -20,7 +21,7 @@ namespace Sorty
         private async void ProgressForm_Load(object sender, EventArgs e)
         {
             pictureBox1.Image = SystemIcons.Information.ToBitmap();
-            await Task.WhenAll(tasks);
+            await Task.WhenAll(tasks.Select(x => x()).ToList());
             timer1.Stop();
             Close();
         }
