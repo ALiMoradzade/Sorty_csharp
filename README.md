@@ -1,8 +1,10 @@
 # Sorty
 This application was developed for educational purposes to help students understand two programming concepts:
 
-## Concurrency and multithreading
-## Sorting algorithms
+- Concurrency and multithreading
+- Sorting algorithms
+
+## Implemented Sorting Algorithms
 * Bead
 * Bogo (disabled)
 * Bubble
